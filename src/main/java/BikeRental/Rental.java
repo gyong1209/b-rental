@@ -25,15 +25,22 @@ public class Rental {
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
+        // Bike Aggregate
         BikeRental.external.Bike bike = new BikeRental.external.Bike();
         bike.setUserId(this.getUserId());
         bike.setBikeId(this.getBikeId());
         bike.setStatus(this.getStatus());
 
         // mappings goes here
-        RentalApplication.applicationContext.getBean(BikeRental.external.BikeService.class)
+        RentalApplication.applicationContextBike.getBean(BikeRental.external.BikeService.class)
             .rent(bike);
 
+        // Voucher Aggregate
+        BikeRental.external.Voucher voucher = new BikeRental.external.Voucher();
+        voucher.setUserId(this.getUserId());
+
+        RentalApplication.applicationContextBike.getBean(BikeRental.external.VoucherService.class)
+                .rent(voucher);
 
     }
 

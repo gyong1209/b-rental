@@ -34,6 +34,7 @@ spring:
 api:
   url:
     bike: http://localhost:8082
+    voucher: http://localhost:8083
 
 logging:
   level:
@@ -70,3 +71,4 @@ spring:
 api:
   url:
     bike: http://bike:8082
+    voucher: http://voucher:8083

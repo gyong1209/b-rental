@@ -11,7 +11,7 @@ import java.util.Date;
 @FeignClient(name="voucher", url="${api.url.voucher}")
 public interface VoucherService {
 
-    @RequestMapping(method= RequestMethod.PATCH, path="/vouchers")
+    @RequestMapping(method= RequestMethod.POST, path="/vouchers")
     public void rent(@RequestBody Voucher voucher);
 
 }

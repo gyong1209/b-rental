@@ -11,8 +11,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
 public class RentalApplication {
-    protected static ApplicationContext applicationContext;
+    protected static ApplicationContext applicationContextBike;
+
     public static void main(String[] args) {
-        applicationContext = SpringApplication.run(RentalApplication.class, args);
+        applicationContextBike = SpringApplication.run(RentalApplication.class, args);
     }
 }
